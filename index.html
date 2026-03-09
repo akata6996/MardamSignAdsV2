@@ -268,7 +268,7 @@
         <div class="mb-4 flex items-start justify-between gap-3">
           <div>
             <h2 id="appointment-modal-title" class="text-xl font-bold sm:text-2xl">Appointment Request</h2>
-            <p class="mt-1 text-sm text-slate-300">Fill out all details below and we'll open your email app addressed to <strong>mardamsignads@gmail.com</strong>.</p>
+            <p class="mt-1 text-sm text-slate-300">Fill out all details below and we'll send your request directly to <strong>mardamsignads@gmail.com</strong>.</p>
           </div>
           <button type="button" data-close-appointment class="rounded-lg border border-white/20 bg-white/5 px-3 py-1 text-sm hover:bg-white/10">Close</button>
         </div>
@@ -311,16 +311,13 @@
             <label class="form-field sm:col-span-2">
               Reference File (optional)
               <input type="file" name="referenceFile" accept=".png,.jpeg,.png,.pdf,.ai,.psd,.svg" />
-              <small class="text-xs text-slate-400">Selected filename will be added to the email draft. Attach the actual file in your email app before sending.</small>
+              <small class="text-xs text-slate-400">Selected filename will be included in your request. You can share the actual file when our team contacts you.</small>
             </label>
           </div>
           <div id="appointment-status" class="mt-4 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200" role="status" aria-live="polite"></div>
-          <div class="mt-5 grid gap-3 sm:grid-cols-2">
+          <div class="mt-5">
             <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-brand-red to-brand-orange px-5 py-3 font-semibold text-white shadow-glow transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60">
               Send Appointment Email
-            </button>
-            <button id="send-whatsapp" type="button" class="w-full rounded-xl border border-emerald-300/40 bg-emerald-300/10 px-5 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-300/20">
-              Send via WhatsApp
             </button>
           </div>
         </form>

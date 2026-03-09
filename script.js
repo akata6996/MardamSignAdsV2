@@ -1,6 +1,6 @@
 const BUSINESS_EMAIL = 'mardamsignads@gmail.com';
-const PHONE_E164 = '639228487611';
 const MAX_REFERENCE_SIZE_MB = 10;
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${BUSINESS_EMAIL}`;
 
 const form = document.getElementById('appointment-form');
 const year = document.getElementById('year');
@@ -70,34 +70,6 @@ const closeModal = () => {
 
 const sanitizeText = (value) => value.replace(/[<>]/g, '').trim();
 
-const formatAppointmentDetails = (details) => {
-  return [
-    `Name: ${details.name}`,
-    `Email: ${details.email}`,
-    `Phone: ${details.phone}`,
-    `Service Needed: ${details.service}`,
-    `Reference File: ${details.referenceFileName || 'No file selected'}`,
-    '',
-    'Project Description:',
-    details.description,
-  ].join('\n');
-};
-
-const openMailClient = (details) => {
-  const subject = encodeURIComponent(
-    `Appointment Request - ${details.service || 'General Inquiry'}`
-  );
-  const body = encodeURIComponent(formatAppointmentDetails(details));
-  window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
-};
-
-const openWhatsApp = (details) => {
-  const whatsappBody = encodeURIComponent(
-    `Hello Mardam Sign Ads! I want to request an appointment.\n\n${formatAppointmentDetails(details)}`
-  );
-  window.open(`https://wa.me/${PHONE_E164}?text=${whatsappBody}`, '_blank', 'noopener');
-};
-
 const parseAndValidate = () => {
   if (!form) {
     return { valid: false, error: 'Appointment form is unavailable.' };
@@ -141,6 +113,33 @@ const parseAndValidate = () => {
   return { valid: true, details };
 };
 
+const sendAppointmentRequest = async (details) => {
+  const payload = {
+    _subject: `Appointment Request - ${details.service || 'General Inquiry'}`,
+    name: details.name,
+    email: details.email,
+    phone: details.phone,
+    service: details.service,
+    description: details.description,
+    referenceFile: details.referenceFileName || 'No file selected',
+  };
+
+  const response = await fetch(FORMSUBMIT_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await response.json().catch(() => null);
+
+  if (!response.ok) {
+    throw new Error(data?.message || 'Unable to send your request right now. Please try again.');
+  }
+};
+
 openButtons.forEach((button) => {
   button.addEventListener('click', openModal);
 });
@@ -160,7 +159,7 @@ modal?.addEventListener('click', (event) => {
   }
 });
 
-form?.addEventListener('submit', (event) => {
+form?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   submitButton?.setAttribute('disabled', 'true');
@@ -172,24 +171,13 @@ form?.addEventListener('submit', (event) => {
     return;
   }
 
-  openMailClient(result.details);
-  setStatus('Email draft opened. You can also send this via WhatsApp.', 'success');
-
-  window.setTimeout(() => {
+  try {
+    await sendAppointmentRequest(result.details);
+    setStatus('Appointment request sent successfully. We will contact you soon.', 'success');
+    form.reset();
+  } catch (error) {
+    setStatus(error.message || 'Something went wrong while sending your request.', 'error');
+  } finally {
     submitButton?.removeAttribute('disabled');
-  }, 400);
-});
-
-const whatsappButton = document.getElementById('send-whatsapp');
-
-whatsappButton?.addEventListener('click', () => {
-  const result = parseAndValidate();
-
-  if (!result.valid) {
-    setStatus(result.error, 'error');
-    return;
   }
-
-  openWhatsApp(result.details);
-  setStatus('WhatsApp opened in a new tab.', 'success');
 });
