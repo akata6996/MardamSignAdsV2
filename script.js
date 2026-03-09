@@ -1,8 +1,20 @@
 const form = document.getElementById('appointmentForm');
 const formMessage = document.getElementById('formMessage');
 const year = document.getElementById('year');
+const revealItems = document.querySelectorAll('.reveal');
 
 year.textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.14 });
+
+revealItems.forEach((item) => observer.observe(item));
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();

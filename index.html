@@ -7,26 +7,35 @@
   <meta name="description" content="MARDAM SIGN ADS provides professional signage, printing, and advertising solutions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero" id="top">
     <div class="hero__overlay"></div>
-    <div class="hero__content container">
+    <div class="hero__blobs" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="hero__content container reveal">
       <p class="hero__eyebrow">Trusted Signage & Printing Partner</p>
       <h1>MARDAM SIGN ADS</h1>
       <p class="hero__tagline">Professional Signage, Printing, and Advertising Solutions</p>
-      <a href="#appointment" class="btn btn--primary">Book an Appointment</a>
+      <div class="hero__cta-wrap">
+        <a href="#appointment" class="btn btn--primary">Book an Appointment</a>
+      </div>
     </div>
+    <a href="#services" class="scroll-indicator" aria-label="Scroll to services">
+      <span></span>
+    </a>
   </header>
 
   <main>
-    <section class="section section--services" id="services">
+    <section class="section section--services reveal" id="services">
       <div class="container">
         <h2>Mardam Product and Services</h2>
+        <p class="section-subtitle">High-quality visual solutions crafted for your brand and business needs.</p>
         <div class="services-grid">
-          <article class="card">
+          <article class="card glass">
             <ul>
               <li>Tarpaulin Printing</li>
               <li>Box Type Signage</li>
@@ -41,7 +50,7 @@
               <li>Temporary Plate</li>
             </ul>
           </article>
-          <article class="card">
+          <article class="card glass">
             <ul>
               <li>Tshirt Printing</li>
               <li>Mug Printing</li>
@@ -60,7 +69,7 @@
       </div>
     </section>
 
-    <section class="section section--contact" id="contact">
+    <section class="section section--contact reveal" id="contact">
       <div class="container">
         <h2>Contact Information</h2>
         <div class="contact-grid">
@@ -80,7 +89,7 @@
       </div>
     </section>
 
-    <section class="section section--locations" id="branches">
+    <section class="section section--locations reveal" id="branches">
       <div class="container">
         <h2>Branch Locations</h2>
         <div class="locations-grid">
@@ -100,7 +109,7 @@
       </div>
     </section>
 
-    <section class="section section--appointment" id="appointment">
+    <section class="section section--appointment reveal" id="appointment">
       <div class="container form-wrap">
         <h2>Request an Appointment</h2>
         <form id="appointmentForm" class="appointment-form" action="https://formsubmit.co/ajax/mardamsignads@gmail.com" method="POST" novalidate>
