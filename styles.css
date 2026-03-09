@@ -1,0 +1,174 @@
+.bg-grid {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.16), transparent 38%),
+    radial-gradient(circle at 85% 20%, rgba(239, 68, 68, 0.2), transparent 33%),
+    linear-gradient(160deg, #0b1120 0%, #111827 55%, #0b1120 100%);
+}
+
+.glass-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 32px rgba(2, 6, 23, 0.35);
+}
+
+.service-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.1rem;
+  transition: transform 240ms ease, border-color 240ms ease, background-color 240ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239, 68, 68, 0.55);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.service-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.service-card ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+  color: #cbd5e1;
+}
+
+.service-card li + li {
+  margin-top: 0.3rem;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 180ms ease;
+}
+
+.nav-link:hover {
+  color: #67e8f9;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.footer-link {
+  color: #cbd5e1;
+  transition: color 180ms ease;
+}
+
+.footer-link:hover {
+  color: #67e8f9;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(17, 24, 39, 0.8);
+  padding: 0.72rem 0.8rem;
+  color: #f8fafc;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: rgba(56, 189, 248, 0.75);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.appointment-dialog {
+  width: min(760px, calc(100% - 2rem));
+  max-height: calc(100vh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  overflow: visible;
+}
+
+.appointment-dialog::backdrop {
+  background: rgba(2, 6, 23, 0.75);
+}
+
+.modal-overlay-form {
+  position: fixed;
+  inset: 0;
+}
+
+.modal-overlay-btn {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.modal-panel {
+  position: relative;
+  z-index: 1;
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  padding: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .service-card,
+  .glass-card,
+  .modal-panel {
+    border-radius: 0.85rem;
+  }
+
+  .modal-panel {
+    padding: 1rem;
+  }
+}
+
+body.modal-open-fallback {
+  overflow: hidden;
+}
+
+#appointment-status:empty {
+  display: none;
+}
+
+#appointment-status[data-state='error'] {
+  border-color: rgba(248, 113, 113, 0.45);
+  background: rgba(127, 29, 29, 0.25);
+  color: #fecaca;
+}
+
+#appointment-status[data-state='success'] {
+  border-color: rgba(74, 222, 128, 0.45);
+  background: rgba(20, 83, 45, 0.28);
+  color: #bbf7d0;
+}

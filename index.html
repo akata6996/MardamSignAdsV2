@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mardam Sign Ads | Modern Signage & Printing Solutions</title>
+    <meta
+      name="description"
+      content="Mardam Sign Ads delivers premium signage, printing, and branded merchandise. Book an appointment online with project details and reference files."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#0b1120" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                red: '#ef4444',
+                orange: '#f97316',
+                dark: '#0b1120',
+                slate: '#111827',
+              },
+            },
+            boxShadow: {
+              glow: '0 10px 30px rgba(239, 68, 68, 0.25)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-brand-dark text-slate-100 antialiased selection:bg-brand-red/30">
+    <div class="bg-grid min-h-screen">
+      <header class="sticky top-0 z-50 border-b border-white/10 backdrop-blur supports-[backdrop-filter]:bg-brand-dark/75">
+        <div class="mx-auto flex w-[min(1200px,92vw)] items-center justify-between gap-4 border-b border-white/10 py-2 text-xs text-slate-300">
+          <p class="hidden sm:block">Premium signage, printing, and custom branding solutions.</p>
+          <div class="flex items-center gap-3">
+            <a href="tel:+639228487611" class="hover:text-cyan-300">📞 0922 848 7611</a>
+            <a href="mailto:mardamsignads@gmail.com" class="hover:text-cyan-300">✉️ mardamsignads@gmail.com</a>
+          </div>
+          <span class="hidden rounded-full border border-emerald-300/30 bg-emerald-300/10 px-2 py-1 text-[11px] font-semibold text-emerald-200 lg:inline">Open Mon–Sat · 8:00 AM–6:00 PM</span>
+        </div>
+
+        <nav class="mx-auto flex w-[min(1200px,92vw)] flex-wrap items-center justify-between gap-4 py-3">
+          <a href="#top" class="inline-flex items-center" aria-label="Mardam Sign Ads home">
+            <img src="images/logo.png" class="h-[220px] w-[220px] sm:w-[280px] lg:w-[330px]" />
+          </a>
+
+          <div class="hidden items-center gap-5 text-sm font-medium text-slate-300 md:flex">
+            <a href="#services" class="hover:text-white">Services</a>
+            <a href="#appointment" class="hover:text-white">Appointments</a>
+            <a href="#contact" class="hover:text-white">Contact</a>
+          </div>
+
+          <button
+            type="button"
+            data-open-appointment
+            aria-controls="appointment-modal"
+            class="rounded-xl border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold transition hover:border-brand-red hover:bg-brand-red/20"
+          >
+            Book Appointment
+          </button>
+        </nav>
+        <div class="mx-auto flex w-[min(1200px,92vw)] items-center gap-3 overflow-x-auto pb-3 text-xs text-slate-300 md:hidden">
+          <a href="#services" class="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-3 py-1.5">Services</a>
+          <a href="#appointment" class="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-3 py-1.5">Appointments</a>
+          <a href="#contact" class="whitespace-nowrap rounded-full border border-white/15 bg-white/5 px-3 py-1.5">Contact</a>
+        </div>
+      </header>
+
+      <noscript>
+        <div class="mx-auto mt-6 w-[min(1200px,92vw)] rounded-xl border border-amber-300/30 bg-amber-300/10 px-4 py-3 text-sm text-amber-100">
+          JavaScript is disabled. The quick appointment form requires JavaScript. Please contact us directly via
+          <a href="mailto:mardamsignads@gmail.com" class="underline">email</a> or phone.
+        </div>
+      </noscript>
+
+      <main id="top">
+        <section class="mx-auto grid w-[min(1200px,92vw)] gap-12 py-12 md:grid-cols-2 md:items-center lg:py-20">
+          <div data-aos="fade-right" data-aos-duration="900">
+            <p class="mb-3 inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+              Mardam Product and Services
+            </p>
+            <h1 class="text-3xl font-black leading-tight sm:text-4xl lg:text-6xl">
+              Stand out with modern signage, prints, and custom branding.
+            </h1>
+            <p class="mt-5 max-w-xl text-slate-300 sm:text-lg">
+              We create high-impact visuals from storefront signage to event and corporate materials,
+              combining creative design with quality production and fast service.
+            </p>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                href="#services"
+                class="rounded-xl bg-gradient-to-r from-brand-red to-brand-orange px-5 py-3 font-semibold text-white shadow-glow transition hover:scale-[1.02]"
+              >
+                Explore Services
+              </a>
+              <button
+                type="button"
+                data-open-appointment
+                aria-controls="appointment-modal"
+                class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 font-semibold transition hover:border-cyan-300 hover:bg-cyan-300/10"
+              >
+                Quick Appointment
+              </button>
+            </div>
+          </div>
+
+          <div data-aos="zoom-in" data-aos-duration="900" class="rounded-2xl border border-white/10 bg-white/5 p-3 shadow-2xl">
+            <img src="images/logo.png" class="w-full rounded-xl bg-black/10 p-3" />
+          </div>
+        </section>
+
+        <section id="services" class="border-y border-white/10 bg-white/5 py-16">
+          <div class="mx-auto w-[min(1200px,92vw)]">
+            <div class="max-w-3xl" data-aos="fade-up">
+              <h2 class="text-2xl font-bold sm:text-3xl lg:text-4xl">Services designed to grow your brand</h2>
+              <p class="mt-3 text-slate-300">
+                Full-service production for signage, printing, and custom merchandise with premium finishing.
+              </p>
+            </div>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <article class="service-card" data-aos="fade-up" data-aos-delay="50">
+                <h3>Signage & Display</h3>
+                <ul>
+                  <li>Box Type Signage</li>
+                  <li>Frame Type Signages</li>
+                  <li>Build Up Acrylic Sign</li>
+                  <li>Stainless Steel</li>
+                  <li>Standee Banner</li>
+                  <li>Temporary Plate</li>
+                </ul>
+              </article>
+
+              <article class="service-card" data-aos="fade-up" data-aos-delay="120">
+                <h3>Print & Production</h3>
+                <ul>
+                  <li>Tarpaulin Printing</li>
+                  <li>Sticker Printing</li>
+                  <li>Laser Printing</li>
+                  <li>UV Printing</li>
+                  <li>Lamination</li>
+                  <li>Panaflex / Acrylic Cutting</li>
+                </ul>
+              </article>
+
+              <article class="service-card" data-aos="fade-up" data-aos-delay="180">
+                <h3>Custom Items</h3>
+                <ul>
+                  <li>T-shirt Printing</li>
+                  <li>T-shirt Sublimation</li>
+                  <li>Mug Printing</li>
+                  <li>Fan Sublimation</li>
+                  <li>PVC ID (Laser/Inkjet)</li>
+                  <li>ID Sling / Lanyard</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="appointment" class="mx-auto w-[min(1200px,92vw)] py-16">
+          <div class="glass-card p-6 sm:p-8" data-aos="fade-up">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h2 class="text-2xl font-bold sm:text-3xl">Book an Appointment</h2>
+                <p class="mt-2 max-w-2xl text-slate-300">
+                  Open our quick popup form and send complete project details directly to
+                  <strong>mardamsignads@gmail.com</strong>.
+                </p>
+              </div>
+              <button
+                type="button"
+                data-open-appointment
+                aria-controls="appointment-modal"
+                class="rounded-xl bg-gradient-to-r from-brand-red to-brand-orange px-5 py-3 font-semibold text-white shadow-glow transition hover:brightness-110"
+              >
+                Open Appointment Form
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="border-t border-white/10 bg-white/5 py-16">
+          <div class="mx-auto w-[min(1200px,92vw)]">
+            <h2 class="text-2xl font-bold sm:text-3xl" data-aos="fade-up">Contact Information</h2>
+            <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              <article class="glass-card p-5" data-aos="fade-up" data-aos-delay="50">
+                <h3 class="text-lg font-semibold">Main Branch</h3>
+                <p class="mt-2 text-slate-300">A.S. Fortuna Street (fronting JCenter Mall)</p>
+                <p class="mt-2"><strong>Landline:</strong> 420 3766</p>
+                <p class="mt-1"><strong>Email:</strong> <a class="text-cyan-300 hover:underline" href="mailto:mardamsignads@gmail.com">mardamsignads@gmail.com</a></p>
+              </article>
+
+              <article class="glass-card p-5" data-aos="fade-up" data-aos-delay="120">
+                <h3 class="text-lg font-semibold">Branch 2</h3>
+                <p class="mt-2 text-slate-300">Gold Royal Plaza, A.C. Cortes (beside 7/11, BB Cabahug Guizo Mandaue)</p>
+                <p class="mt-2"><strong>Landline:</strong> 421 4016</p>
+                <p class="mt-1"><strong>Email:</strong> <a class="text-cyan-300 hover:underline" href="mailto:mardamsignadsbranch2@gmail.com">mardamsignadsbranch2@gmail.com</a></p>
+              </article>
+
+              <article class="glass-card p-5" data-aos="fade-up" data-aos-delay="180">
+                <h3 class="text-lg font-semibold">Phone Numbers</h3>
+                <p class="mt-2 text-slate-300"><strong>SUN:</strong> 0922 848 7611 / 0922 860 9235 / 0977 323 4435</p>
+                <p class="mt-2 text-slate-300"><strong>GLOBE:</strong> 0917 530 7714 / 0917 311 4377 / 0917 116 1804</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-white/10 bg-black/20">
+        <div class="mx-auto grid w-[min(1200px,92vw)] gap-8 py-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <img src="images/logo.png" class="h-auto w-[180px]" />
+            <p class="mt-3 text-sm text-slate-400">Custom signs, prints, and branded materials built with quality and speed.</p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-200">Quick Links</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-400">
+              <li><a href="#services" class="hover:text-white">Services</a></li>
+              <li><a href="#appointment" class="hover:text-white">Appointments</a></li>
+              <li><a href="#contact" class="hover:text-white">Contact</a></li>
+            </ul>
+            <p class="mt-3 text-xs text-slate-500">Serving Cebu City, Mandaue, and nearby areas.</p>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-200">Contact</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-400">
+              <li><a href="mailto:mardamsignads@gmail.com" class="hover:text-white">mardamsignads@gmail.com</a></li>
+              <li><a href="tel:+639228487611" class="hover:text-white">0922 848 7611</a></li>
+              <li><a href="tel:+639175307714" class="hover:text-white">0917 530 7714</a></li>
+              <li>Mon–Sat: 8:00 AM – 6:00 PM</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-200">Need a quick quote?</h3>
+            <p class="mt-3 text-sm text-slate-400">Send your project details and reference file through our appointment popup.</p>
+            <button type="button" data-open-appointment aria-controls="appointment-modal" class="mt-4 rounded-lg bg-gradient-to-r from-brand-red to-brand-orange px-4 py-2 text-sm font-semibold text-white hover:brightness-110">
+              Start Appointment
+            </button>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10">
+          <div class="mx-auto flex w-[min(1200px,92vw)] flex-wrap items-center justify-between gap-3 py-4 text-xs text-slate-400">
+            <p>© <span id="year"></span> Mardam Sign Ads. All rights reserved.</p>
+            <a href="#top" class="hover:text-white">Back to top ↑</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <dialog id="appointment-modal" class="appointment-dialog" aria-labelledby="appointment-modal-title">
+      <form method="dialog" class="modal-overlay-form">
+        <button aria-label="Close appointment form" class="modal-overlay-btn" value="cancel"></button>
+      </form>
+      <div class="modal-panel glass-card" tabindex="-1">
+        <div class="mb-4 flex items-start justify-between gap-3">
+          <div>
+            <h2 id="appointment-modal-title" class="text-xl font-bold sm:text-2xl">Appointment Request</h2>
+            <p class="mt-1 text-sm text-slate-300">Fill out all details below and we'll open your email app addressed to <strong>mardamsignads@gmail.com</strong>.</p>
+          </div>
+          <button type="button" data-close-appointment class="rounded-lg border border-white/20 bg-white/5 px-3 py-1 text-sm hover:bg-white/10">Close</button>
+        </div>
+
+        <form id="appointment-form" novalidate>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="form-field sm:col-span-2">
+              Full Name
+              <input type="text" name="name" required autocomplete="name" placeholder="Your full name" />
+            </label>
+            <label class="form-field">
+              Email Address
+              <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            </label>
+            <label class="form-field">
+              Phone Number
+              <input type="tel" name="phone" required inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX" />
+            </label>
+            <label class="form-field sm:col-span-2">
+              Service Needed
+              <select name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option>Tarpaulin Printing</option>
+                <option>Box Type Signage</option>
+                <option>Acrylic Signage</option>
+                <option>Neon Light</option>
+                <option>T-shirt Printing</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="form-field sm:col-span-2">
+              Project Description
+              <textarea
+                name="description"
+                rows="4"
+                required
+                placeholder="Tell us what you need, quantity, size, location, and preferred timeline"
+              ></textarea>
+            </label>
+            <label class="form-field sm:col-span-2">
+              Reference File (optional)
+              <input type="file" name="referenceFile" accept=".png,.jpeg,.png,.pdf,.ai,.psd,.svg" />
+              <small class="text-xs text-slate-400">Selected filename will be added to the email draft. Attach the actual file in your email app before sending.</small>
+            </label>
+          </div>
+          <div id="appointment-status" class="mt-4 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200" role="status" aria-live="polite"></div>
+          <div class="mt-5 grid gap-3 sm:grid-cols-2">
+            <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-brand-red to-brand-orange px-5 py-3 font-semibold text-white shadow-glow transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60">
+              Send Appointment Email
+            </button>
+            <button id="send-whatsapp" type="button" class="w-full rounded-xl border border-emerald-300/40 bg-emerald-300/10 px-5 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-300/20">
+              Send via WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
